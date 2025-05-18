@@ -9,10 +9,10 @@ const teamMembers = [
     description: "Visionario del progetto GeriRecoveryOre, unisce tecnologia e sostenibilità.",
     icon: <FaUserTie className="text-4xl text-emerald-400 drop-shadow-lg" />,
     level: 0,
-    joined: "Gen 2024"
+    joined: "Owner"
   },
   {
-    name: "Alba",
+    name: "Pietro",
     role: "Eco Designer",
     description: "Progetta soluzioni visive che riflettano l'anima ecologica del brand.",
     icon: <FaLeaf className="text-3xl text-lime-400 drop-shadow" />,
