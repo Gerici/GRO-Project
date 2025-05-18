@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Custom animations (usate da framer-motion ma opzionalmente richiamabili anche da Tailwind) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aggiunta al footer - badge eco-friendly */
+footer .bg-gray-900 p {
+  background: linear-gradient(to right, #00b140, #008b3d);
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Aggiunta al footer - badge eco-friendly */
+footer .bg-gray-900 p {
+  background: linear-gradient(to right, #00b140, #008b3d);
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Modifica l'iconografia dei social */
+footer .flex {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer .flex a {
+  margin: 5px;
+}
+
+footer .text-sm {
+  font-size: 0.875rem;
+}
+
+/* Riduzione delle dimensioni del logo e dei testi su schermi piccoli */
+@media (max-width: 768px) {
+  footer .text-xl {
+    font-size: 1rem;
+  }
+
+  footer img {
+    height: 48px; /* Adattamento del logo per schermi più piccoli */
+  }
+}
+
+/* Animazione hover per icone social */
+footer a:hover {
+  transform: scale(1.1); /* Ingrandisce leggermente l'icona */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Aggiunta di transizioni dolci per gli altri elementi */
+footer .bg-gray-800 {
+  transition: background-color 0.3s ease;
+}
+
+/* Animazione per gli step della timeline */
+motion.div {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+/* Transizione quando l'utente scorre sopra le icone */
+motion.div:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Personalizzazione testo per ogni step */
+motion.div h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+motion.div p {
+  font-size: 1rem;
+  color: #d1d5db;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
