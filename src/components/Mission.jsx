@@ -3,7 +3,7 @@ import { FaSeedling, FaGlobe, FaRecycle, FaLeaf } from "react-icons/fa";
 
 export default function Mission() {
   return (
-    <section id="mission" className="relative py-24 px-6 bg-gradient-to-b from-black via-emerald-950 to-emerald-950 text-white">
+    <section id="mission" className="relative py-24 px-6 bg-gradient-to-b from-black via-emerald-950/30 to-emerald-950 text-white">
       <motion.div
         className="text-center mb-16"
         initial={{ opacity: 0, y: 40 }}

@@ -65,7 +65,7 @@ export default function Contact() {
 
   return (
     <section
-      className="relative py-24 px-6 bg-gradient-to-b from-black via-neutral-950 to-black overflow-hidden"
+      className="relative py-24 px-6 bg-gradient-to-b from-zinc-900 via-neutral-950 to-black overflow-hidden"
       id="Contact"
     >
       <motion.h2

@@ -6,10 +6,11 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Missione", href: "#mission" },
-    { label: "RAEE", href: "#raee" },
-    { label: "Come Funziona", href: "#processo" },
+    { label: "RAEE Awareness", href: "#raee" },
+    { label: "RAEE Tracker", href: "#raee-tracker" },
+    { label: "Come Funziona", href: "#how" },
     { label: "Team", href: "#team" },
-    { label: "Contatti", href: "#contatti" },
+    { label: "Contatti", href: "#contact" },
   ];
 
   return (

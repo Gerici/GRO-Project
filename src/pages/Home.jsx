@@ -4,6 +4,7 @@ import HowItWorks from '../components/HowItWorks';
 import Team from '../components/Team';
 import Contact from '../components/Contact';
 
+
 export default function Home() {
 	return (
 		<>

@@ -6,7 +6,9 @@ import HowItWorks from "./components/HowItWorks";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import RaeeAwareness from "./components/RaeeAwareness"; // Nuovo componente
+import RaeeAwareness from "./components/RaeeAwareness"; 
+import RAEETracker from "./components/RAEETracker";
+
 
 export default function App() {
   return (
@@ -51,7 +53,6 @@ export default function App() {
           <Mission />
         </motion.div>
 
-        {/* Nuovo componente RAEE Awareness */}
         <motion.div
           id="raee-awareness"
           initial={{ opacity: 0 }}
@@ -61,6 +62,17 @@ export default function App() {
         >
           <RaeeAwareness />
         </motion.div>
+
+        <motion.div
+          id="raee-tracker"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <RAEETracker />
+        </motion.div>
+
 
         <motion.div
           id="how"
