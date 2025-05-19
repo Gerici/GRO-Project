@@ -38,7 +38,7 @@ export default function App() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.3 }}
         >
           <Hero />
         </motion.div>
@@ -47,8 +47,8 @@ export default function App() {
           id="mission"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <Mission />
         </motion.div>
@@ -57,8 +57,8 @@ export default function App() {
           id="raee-awareness"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <RaeeAwareness />
         </motion.div>
@@ -67,8 +67,8 @@ export default function App() {
           id="raee-tracker"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <RAEETracker />
         </motion.div>
@@ -78,8 +78,8 @@ export default function App() {
           id="how"
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <HowItWorks />
         </motion.div>
@@ -88,8 +88,8 @@ export default function App() {
           id="team"
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <Team />
         </motion.div>
@@ -98,8 +98,8 @@ export default function App() {
           id="contact"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <Contact />
         </motion.div>

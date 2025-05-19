@@ -51,7 +51,8 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Naviga</h4>
           <ul className="space-y-2 text-sm">
             <li><a href="#mission" className="hover:text-white transition">Missione</a></li>
-            <li><a href="#raee-awareness" className="hover:text-white transition">RAEE</a></li>
+            <li><a href="#raee-awareness" className="hover:text-white transition">RAEE Awareness</a></li>
+            <li><a href="#raee-tracker" className="hover:text-white transition">RAEE Tracker</a></li>
             <li><a href="#how" className="hover:text-white transition">Come funziona</a></li>
             <li><a href="#team" className="hover:text-white transition">Team</a></li>
             <li><a href="#contact" className="hover:text-white transition">Contatti</a></li>
