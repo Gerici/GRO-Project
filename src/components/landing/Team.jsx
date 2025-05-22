@@ -41,13 +41,13 @@ export default function Team() {
   return (
     <section
       id="Team"
-      className="relative py-32 px-6 bg-gradient-to-b from-black via-zinc-900 to-zinc-900 overflow-hidden"
+      className="relative py-32 px-6 bg-gradient-to-b from-black via-black to-zinc-900 overflow-hidden"
     >
       {/* Animated Energy Lines */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute left-1/2 top-0 w-[1px] h-full bg-gradient-to-b from-emerald-500/20 to-emerald-500/20 animate-pulse opacity-50" />
-        <div className="absolute right-1/3 top-0 w-[1px] h-full bg-gradient-to-b from-cyan-400/20 to-cyan-400/20 animate-pulse delay-300 opacity-30" />
-        <div className="absolute left-1/4 top-0 w-[1px] h-full bg-gradient-to-b from-lime-400/20 to-lime-400/20 animate-pulse delay-500 opacity-30" />
+        <div className="absolute left-1/2 top-0 w-[1px] h-full bg-gradient-to-b from-black to-emerald-500/20 animate-pulse opacity-50" />
+        <div className="absolute right-1/3 top-0 w-[1px] h-full bg-gradient-to-b from-black to-cyan-400/20 animate-pulse delay-300 opacity-30" />
+        <div className="absolute left-1/4 top-0 w-[1px] h-full bg-gradient-to-b from-black to-lime-400/20 animate-pulse delay-500 opacity-30" />
       </div>
 
       {/* Titolo */}
