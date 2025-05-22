@@ -1,31 +1,36 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { FaTools, FaRecycle, FaIndustry, FaCheckCircle } from "react-icons/fa";
+import {
+  FaScrewdriverWrench,
+  FaRecycle,
+  FaFlask,
+  FaArrowRotateRight,
+} from "react-icons/fa6";
 
 const steps = [
   {
     title: "Raccolta e Smontaggio",
     description:
       "Raccogliamo dispositivi elettronici e li smontiamo in modo sicuro per separare le risorse.",
-    icon: <FaTools className="text-emerald-400 text-3xl" />,
+    icon: <FaScrewdriverWrench className="text-emerald-400 text-2xl" />,
   },
   {
     title: "Recupero Metalli",
     description:
       "I materiali elettronici vengono trattati e i metalli preziosi vengono recuperati.",
-    icon: <FaRecycle className="text-emerald-400 text-3xl" />,
+    icon: <FaRecycle className="text-emerald-400 text-2xl" />,
   },
   {
     title: "Trattamento Chimico",
     description:
       "Attraverso processi chimici avanzati, estraiamo il metallo puro per riutilizzarlo.",
-    icon: <FaIndustry className="text-emerald-400 text-3xl" />,
+    icon: <FaFlask className="text-emerald-400 text-2xl" />,
   },
   {
     title: "Ritorno alla Produzione",
     description:
       "I metalli purificati sono pronti per essere reintegrati nel ciclo di produzione.",
-    icon: <FaCheckCircle className="text-emerald-400 text-3xl" />,
+    icon: <FaArrowRotateRight className="text-emerald-400 text-2xl" />,
   },
 ];
 
@@ -64,13 +69,20 @@ function AnimatedDot() {
         stroke="#10b981"
         strokeWidth="2"
         fill="none"
-        className="drop-shadow-[0_0_4px_#10b98166] animate-pulse"
+        className="drop-shadow-[0_0_4px_#10b98166]"
       />
-      <circle
+      <motion.circle
         ref={dotRef}
-        r="6"
+        r="8"
         fill="#10b981"
-        className="drop-shadow-md animate-ping"
+        className="drop-shadow-md"
+        animate={{
+          scale: [1, 1.3, 1],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 1.5,
+        }}
       />
     </g>
   );
@@ -80,13 +92,16 @@ export default function HowItWorks() {
   return (
     <section className="relative px-6 py-24 bg-black overflow-hidden">
       <motion.h2
-        className="text-4xl md:text-5xl font-bold text-white text-center mb-4"
+        className="text-4xl md:text-5xl font-extrabold text-center mb-4"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        Dal Rifiuto al Ritorno
+        <span className="text-white">Dal </span>
+        <span className="text-emerald-400">Rifiuto</span>
+        <span className="text-white"> al </span>
+        <span className="text-emerald-400">Ritorno</span>
       </motion.h2>
 
       <motion.p
@@ -99,6 +114,7 @@ export default function HowItWorks() {
         Ogni passaggio è progettato per ridare valore ai metalli preziosi contenuti nei dispositivi elettronici.
       </motion.p>
 
+      {/* Timeline Desktop */}
       <svg
         viewBox="0 0 100 800"
         className="absolute left-1/2 transform -translate-x-1/2 z-0 hidden md:block pointer-events-none"
@@ -115,34 +131,41 @@ export default function HowItWorks() {
             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className={`flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 ${
+            viewport={{ once: true }}className={`flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
-            <div className="w-16 h-16 bg-emerald-900 bg-opacity-20 border border-emerald-500 rounded-xl flex justify-center items-center shadow-md transition-transform duration-300 hover:scale-110 hover:bg-emerald-600/20">
+            <div className="w-16 h-16 bg-emerald-900 bg-opacity-30 border border-emerald-500 rounded-xl flex justify-center items-center shadow-md hover:scale-110 transition-transform duration-300">
               {step.icon}
             </div>
-            <div className="bg-zinc-900 border border-zinc-700 rounded-2xl p-6 shadow-xl w-full max-w-xl transition duration-300 hover:shadow-xl hover:shadow-emerald-500/30 hover:border-emerald-500">
-              <h3 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-white">
-                {step.title}
-              </h3>
+            <div className="bg-zinc-900 border border-zinc-700 rounded-2xl p-6 shadow-xl w-full max-w-xl hover:border-emerald-500 hover:shadow-emerald-500/30 transition duration-300">
+              <h3 className="text-xl font-semibold text-white">{step.title}</h3>
               <p className="mt-2 text-gray-400">{step.description}</p>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Mobile timeline */}
-      <div className="relative border-l-2 border-emerald-500 ml-4 pl-6 space-y-12 md:hidden">
+      {/* Timeline Mobile migliorata */}
+      <div className="relative space-y-12 md:hidden">
         {steps.map((step, index) => (
-          <div key={index} className="relative">
-            <div className="absolute -left-[34px] top-1 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center shadow-md">
-              {step.icon}
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="relative pl-16 pr-4"
+          >
+            <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-emerald-500 bg-opacity-20 border border-emerald-500 flex items-center justify-center shadow-md">
+              <div className="text-emerald-400 text-xl">{step.icon}</div>
             </div>
-            <h3 className="text-white font-semibold text-lg">{step.title}</h3>
-            <p className="text-gray-400 mt-1">{step.description}</p>
-          </div>
+
+            <div className="bg-zinc-900 border border-zinc-700 rounded-xl p-4 shadow-lg hover:border-emerald-500 hover:shadow-emerald-500/30 transition duration-300">
+              <h3 className="text-white text-base font-semibold mb-1">{step.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+            </div>
+          </motion.div>
         ))}
       </div>
     </section>

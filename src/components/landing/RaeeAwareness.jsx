@@ -46,22 +46,43 @@ export default function RaeeAwareness() {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-        {items.map((item, i) => (
+ <div className="flex overflow-x-auto space-x-4 px-1 sm:hidden">
+        {items.map(({ title, text, icon }, index) => (
           <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
+            key={index}
+            className="min-w-[260px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 flex flex-col items-center text-center shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.2 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 shadow-md hover:shadow-2xl transition"
           >
-            <div className="mb-4">{item.icon}</div>
-            <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">{item.text}</p>
+            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 mb-3">
+              {icon}
+            </div>
+            <h3 className="text-base font-semibold text-white">{title}</h3>
+            <p className="text-gray-300 text-sm mt-2">{text}</p>
           </motion.div>
         ))}
       </div>
+
+      {/* Layout griglia per tablet e desktop */}
+      <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 max-w-7xl mx-auto mt-10 px-4">
+        {items.map(({ title, text, icon }, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center shadow-xl min-h-[240px]"
+          >
+            <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gray-800 shadow-inner mb-4">
+              {icon}
+            </div>
+            <h3 className="text-xl font-semibold text-white">{title}</h3>
+            <p className="text-gray-300 mt-2 text-sm">{text}</p>
+          </motion.div>
+        ))}
+      </div>
+
     </section>
   );
 }
