@@ -10,18 +10,17 @@ export default function Login() {
       <PlatformNavbar />
 
       {/* Background Tech Grid */}
-      <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
-        <svg className="w-full h-full" viewBox="0 0 1600 900" fill="none">
-          <g stroke="#10B981" strokeWidth="0.3">
-            {Array.from({ length: 80 }).map((_, i) => (
-              <line key={`v${i}`} x1={(i + 1) * 20} y1="0" x2={(i + 1) * 20} y2="900" opacity="0.05" />
-            ))}
-            {Array.from({ length: 45 }).map((_, i) => (
-              <line key={`h${i}`} x1="0" y1={(i + 1) * 20} x2="1600" y2={(i + 1) * 20} opacity="0.05" />
-            ))}
-          </g>
-        </svg>
-      </div>
+  <div className="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-20">
+    <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <pattern id="techGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#10B981" strokeWidth="0.2" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#techGrid)" />
+    </svg>
+  </div>
+
 
       <div className="relative z-10 flex flex-1 items-center justify-center px-4 py-16 md:px-8">
         <motion.div 

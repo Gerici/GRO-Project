@@ -1,7 +1,7 @@
 // app/login/LoginForm.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Lock, Mail, KeyRound, Eye, EyeOff, ShieldCheck } from "lucide-react";
+import { Mail, KeyRound, Eye, EyeOff, ShieldCheck } from "lucide-react";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
