@@ -1,7 +1,7 @@
 // app/login/LoginForm.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, KeyRound, Eye, EyeOff, ShieldCheck } from "lucide-react";
+import { Mail, KeyRound, Eye, EyeOff, ShieldCheck, LogIn } from "lucide-react";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -28,13 +28,14 @@ export default function LoginForm() {
           Accesso Riservato - RAEE Tracker
         </h2>
       </div>
+
       <span className="inline-block text-xs text-emerald-400 bg-emerald-900/30 px-3 py-1 rounded-full font-medium w-fit">
         Accesso Certificato · Sicuro · Tracciato
       </span>
 
       <div>
         <label className="block text-sm font-semibold mb-1">Email</label>
-        <div className="flex items-center bg-gray-800 rounded-lg px-3 py-2 border border-gray-700 focus-within:border-emerald-500">
+        <div className="flex items-center bg-gray-800 rounded-lg px-3 py-2 border border-gray-700 focus-within:ring-2 focus-within:ring-emerald-500">
           <Mail className="w-4 h-4 text-gray-400 mr-2" />
           <input
             type="email"
@@ -49,7 +50,7 @@ export default function LoginForm() {
 
       <div>
         <label className="block text-sm font-semibold mb-1">Password</label>
-        <div className="flex items-center bg-gray-800 rounded-lg px-3 py-2 border border-gray-700 focus-within:border-emerald-500">
+        <div className="flex items-center bg-gray-800 rounded-lg px-3 py-2 border border-gray-700 focus-within:ring-2 focus-within:ring-emerald-500">
           <KeyRound className="w-4 h-4 text-gray-400 mr-2" />
           <input
             type={showPassword ? "text" : "password"}
@@ -71,9 +72,10 @@ export default function LoginForm() {
 
       <button
         type="submit"
-        className="bg-emerald-500 hover:bg-emerald-600 transition text-white font-semibold py-2 rounded-lg shadow-md"
+        className="bg-emerald-500 hover:bg-emerald-600 transition text-white font-semibold py-2 px-4 rounded-lg shadow-md flex items-center justify-center gap-2 group"
       >
         Accedi
+        <LogIn className="w-4 h-4 text-white opacity-80 group-hover:translate-x-1 transition-transform duration-200" />
       </button>
     </form>
   );

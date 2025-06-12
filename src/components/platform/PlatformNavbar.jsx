@@ -12,7 +12,7 @@ export default function PlatformNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Torna al sito", href: "https://gerirecoveryore.it", icon: <FaHome /> },
+    { label: "Torna al sito", href: "/", icon: <FaHome /> },
     { label: "Documentazione", href: "#docs", icon: <FaBook /> },
     { label: "Assistenza", href: "#support", icon: <FaLifeRing /> },
   ];
