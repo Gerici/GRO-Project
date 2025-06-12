@@ -9,6 +9,7 @@ import Team from "../components/landing/Team";
 import Contact from "../components/landing/Contact";
 import Footer from "../components/landing/Footer";
 
+console.log("🔍", import.meta.env);
 
 export default function App() {
   return (

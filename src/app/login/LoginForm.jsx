@@ -11,14 +11,20 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Login submit:", email, password);
+
     if (email === "admin@example.com") {
-      navigate("/admin/dashboard");
+      console.log("Navigo a /dashboard/admin");
+      navigate("/dashboard/admin");
     } else if (email && password) {
-      navigate("/company/dashboard");
+      console.log("Navigo a /dashboard/company");
+      navigate("/dashboard/company");
     } else {
       alert("Credenziali non valide.");
     }
   };
+
+
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col space-y-6 text-white">

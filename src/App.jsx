@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Login from "./app/login/Login";
-import AdminDashboard from "./app/admin/AdminDashboard";
-import CompanyDashboard from "./app/company/CompanyDashboard";
+import CompanyDashboard from "./app/company/CompanyPlatDashboard";
+import AdminDashboard from "./app/admin/AdminPlatDashboard";
+
+console.log("🌍 ENV VITE:", import.meta.env);
 
 export default function App() {
   return (
